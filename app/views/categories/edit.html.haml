@@ -1,0 +1,13 @@
+= link_to "Show", @category
+|
+- unless @category.parent == nil 
+  = link_to "Back", @category.parent 
+- else
+  = link_to "Back", :categories
+%h2
+  Edit #{@category.name}
+
+- semantic_form_for @category do |form|
+  = form.input :name
+  = form.input :description
+  = form.commit_button "Edit"

@@ -1,0 +1,13 @@
+= link_to "New category", new_category_path
+|
+= link_to "Brands", brands_path
+|
+= link_to "Vehicles", vehicles_path
+%br
+
+%h1
+  List of Categories
+  
+- @categories.each do |category|
+  %p
+    = display_item(category)

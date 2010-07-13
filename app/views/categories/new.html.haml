@@ -1,0 +1,9 @@
+= link_to "Back", categories_path
+%h2
+  Create a category
+
+- semantic_form_for @category do |form|
+  = form.input :parent_id, :as => :hidden, :value => "#{params[:parent_id]}"
+  = form.input :name
+  = form.input :description
+  = form.commit_button "Create"

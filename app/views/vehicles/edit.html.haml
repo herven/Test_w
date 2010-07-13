@@ -1,0 +1,20 @@
+= link_to "Show", @vehicle
+|
+= link_to "Back", :vehicles
+
+%h2
+  Edit #{@vehicle.name}
+
+  - semantic_form_for @vehicle do |form|
+    %p
+      = form.input :name
+    %p
+      = form.input :brand_id, :collection => Category.all.each.map{|cat| [cat.name, cat.id]}
+    %p
+      = form.input :door_nbr
+    %p
+      = form.input :wheel_nbr
+    %p
+      = form.input :car_type, :collection => [['Car', 'Car'], ['Moto', 'Moto']]
+    %br
+    = form.commit_button "Edit"

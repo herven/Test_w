@@ -1,0 +1,8 @@
+= link_to "Back", :brands
+%h2
+  Create a brand
+
+- semantic_form_for @brand do |form|
+  = form.input :name
+  = form.input :description
+  = form.commit_button "Create"

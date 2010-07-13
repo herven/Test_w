@@ -1,0 +1,18 @@
+= link_to "Edit", [:edit, @vehicle]
+|
+= link_to "Back", :vehicles
+
+= button_to 'Delete', @vehicle, :confirm => 'Are u sure?', :method => :delete 
+
+%br 
+
+%p
+  = @vehicle.name
+%p
+  = @vehicle.brand.name
+%p
+  = @vehicle.door_nbr
+%p
+  = @vehicle.wheel_nbr
+%p
+  = @vehicle.car_type

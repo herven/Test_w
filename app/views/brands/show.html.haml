@@ -1,0 +1,21 @@
+= link_to "Edit", [:edit, @brand]
+|
+= link_to "Back", :brands
+
+= button_to 'Delete', @brand, :confirm => 'Are u sure?', :method => :delete 
+
+%br 
+
+%h2
+  = @brand.name
+
+%h5
+  = @brand.description
+  
+
+- unless @brand.vehicles.empty?
+  %h3
+    Vehicles
+  - @brand.vehicles.each do |v|
+    %li
+      = link_to v.name, vehicle_path(v)

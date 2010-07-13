@@ -1,0 +1,19 @@
+= link_to "New vehicle", new_vehicle_path
+|
+= link_to "Back", root_path
+%br
+
+%h1
+  List of vehicles
+  
+
+%h3
+  Cars
+
+= render @cars
+
+%br
+
+%h3
+  Motos
+= render @motos

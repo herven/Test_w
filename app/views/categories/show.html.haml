@@ -1,0 +1,22 @@
+= link_to "New subcategory", new_category_path(:parent_id => @category.id)
+|
+= link_to "Edit", [:edit, @category]
+|
+- unless @category.parent == nil 
+  = link_to "Back", @category.parent 
+- else
+  = link_to "Back", :categories
+
+= button_to 'Delete', @category, :confirm => 'Are u sure?', :method => :delete 
+%br
+
+%h2
+  = @category.name
+%br
+
+- unless @category.children.empty?
+  %h3
+    Subcategories
+  - @category.children.each do |child|
+    %li
+      = link_to child.name, category_path(child)
